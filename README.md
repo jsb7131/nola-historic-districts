@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nola Historic Districts
 
-## Getting Started
+Nola Historic Districts is a Next.js project that leverages [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides) to display New Orleans [Local Historic District](https://gis.nola.gov/arcgis/rest/services/dev/property3/MapServer/4) geometries on an interactive map.
 
-First, run the development server:
+Click a geometry to see basic information about the selected district in a pop-up!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Running Locally
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    git clone https://github.com/jsb7131/nola-historic-districts.git
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Run `npm install` to install the dependencies
 
-## Learn More
+    ```bash
+    cd nola-historic-districts
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Create an account at [mapbox.com](https://www.mapbox.com/) to obtain a Mapbox access token, add a .env file at the root of the project, and add these environment variables to the file
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    NEXT_PUBLIC_MAPBOX_TOKEN=<YourAccessToken>
+    NEXT_PUBLIC_GIS_NOLA_API_URL=https://gis.nola.gov/arcgis/rest/services/dev/property3/MapServer
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Run `npm run dev` to start the development server
 
-## Deploy on Vercel
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
