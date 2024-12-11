@@ -239,10 +239,10 @@ export const HistoricDistrictsMap: React.FC = () => {
           style={mapStyle}
         />
         {loading && !error && (
-          <div className={styles.loading}>Loading...</div>
+          <div className={styles.info}>Loading...</div>
         )}
         {error && (
-          <div className={styles.error}>{error}</div>
+          <div className={styles.info}>{error}</div>
         )}
         {selectedFeature && (
           <div className={styles.popup}>
